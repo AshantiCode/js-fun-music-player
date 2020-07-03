@@ -19,7 +19,9 @@ body {
 }
 
 .card-image {
-  background: url(./img/bluejpg.jpg);
+  background: url(./img/acousticbreeze.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 150px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -50,16 +52,35 @@ body {
           align-items: center;
 }
 
-.card .controls .fa-pause {
-  margin-right: 2rem;
+.card .controls .control {
+  cursor: pointer;
 }
 
-.songs {
-  margin: 100px;
+.card .controls .control:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .song-list {
+  padding: 1.2rem;
+  font-size: 1.3rem;
   text-align: left;
-  border: 1px solid;
+  width: 80%;
+  max-width: 380px;
+  margin: 80px auto 0;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
+}
+
+.song-list li {
+  padding: .3rem;
+  list-style-position: inside;
+}
+
+.song-list .current {
+  background-color: rgba(12, 84, 151, 0.7);
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

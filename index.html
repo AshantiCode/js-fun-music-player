@@ -12,20 +12,20 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
 		integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-
+	<script src="./app.js" defer></script>
 </head>
 
 <body>
 
 	<div class="card">
-		<div class="card-image"></div>
+		<div class="card-image" id="songImage"></div>
 		<div class="card-content">
 			<audio id="player">
-				<source id="source" src="music/bensound-acousticbreeze.mp3">
+				<source id="source">
 				Audio not supported
 			</audio>
 
-			<h2 class="card-title">Acoustic Brreze</h2>
+			<h2 class="card-title" id="title">Acoustic Breeze</h2>
 
 			<div class="volume">
 				<i class="fas fa-volume-down "></i>
@@ -37,10 +37,10 @@
 
 			<div id="controls">
 				<div class="controls">
-					<i class="fas fa-backward fa-2x"></i>
-					<i class="fas fa-pause fa-3x"></i>
-					<i class="fas fa-play fa-3x"></i>
-					<i class="fas fa-forward fa-2x"></i>
+					<i class="control fas fa-backward fa-2x" id="backward"></i>
+					<i class=" control fas fa-pause fa-3x" id="pause"></i>
+					<i class=" control fas fa-play fa-3x" id="play"></i>
+					<i class=" control fas fa-forward fa-2x" id="forward"></i>
 				</div>
 			</div>
 		</div>
@@ -48,17 +48,8 @@
 
 	</div>
 
-	<h4 class="songs">My Songs:</h4>
-	<div class="song-list">
-		<ol>
-			<li>bensound-dance.mp3</li>
-			<li>bensound-dreams.mp3</li>
-			<li>bensound-erf.mp3</li>
-			<li>bensound-inspire.mp3</li>
-			<li>bensound-moose.mp3</li>
-			<li>bensound-summer.mp3</li>
-			<li>bensound-thelounge.mp3</li>
-		</ol>
+	<div class="song-list" id="songList">
+
 	</div>
 	<p>Music: <a href="https://bensound.com">www.bensound.com</a></p>
 </body>
