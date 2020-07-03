@@ -1,1 +1,58 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+}
+
+.card {
+  background: #ffffff;
+  margin: 50px auto 0;
+  width: 80%;
+  border-radius: 25px;
+}
+
+.card-image {
+  background: url(./img/bluejpg.jpg);
+  height: 150px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.card-content {
+  padding: 2rem 1.3rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card .volume-input {
+  width: 80%;
+  margin: 60px 0 60px;
+}
+
+.card .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .controls .fa-pause {
+  margin-right: 2rem;
+}
+
+.card .song-list {
+  text-align: left;
+  border: 1px solid;
+}
+/*# sourceMappingURL=style.css.map */
