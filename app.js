@@ -41,6 +41,7 @@ const songs = [
   },
 ];
 
+// Create HTML List of Songs
 const createSongList = () => {
   const list = document.createElement("ol");
 
@@ -60,18 +61,21 @@ let index = 0;
 //Play Current Song
 const playSong = () => {
   const source = document.getElementById("source");
+
   // get current song and update src
   let song = songs[index];
   source.src = song.url;
 
+  // update title of the song
   const title = document.getElementById("title");
   title.innerText = song.name;
+
   highlightCurrent();
   updateImage();
+  console.log("Player Volume: ", player.volume);
+  player.volume = 0.2;
   player.load();
   player.play();
-
-  console.log("Source: ", source.src);
 };
 
 // Hightlight the current playing song
@@ -95,12 +99,22 @@ const highlightCurrent = () => {
   }
 };
 
+// Update Image to current song
 const updateImage = () => {
   const image = document.querySelector(".card-image");
 
   image.style.cssText = `background-image: url(${songs[index].image}); background-repeat: no-repeat; background-size: cover`;
 };
 
+//Update Progressbar of current song
+const updateProgress = () => {
+  if (player.duration > 0) {
+    const progressBar = document.getElementById("progress");
+    progressBar.value = (player.currentTime / player.duration) * 100;
+  }
+};
+
+// Skip Forward
 const skipForward = () => {
   // if index reaches end of the list, start at the begining
   if (index >= 7) {
@@ -110,6 +124,7 @@ const skipForward = () => {
   playSong();
 };
 
+//Skip Backwards
 const skipBackwards = () => {
   // if index smaller 0 start at end of the list
   if (index <= 0) {
@@ -141,4 +156,11 @@ play.onclick = () => {
 const pause = document.getElementById("pause");
 pause.onclick = () => {
   player.pause();
+};
+
+// Change Volume
+const slider = document.getElementById("volumeSlider");
+slider.oninput = (e) => {
+  const volume = e.target.value;
+  player.volume = volume;
 };
