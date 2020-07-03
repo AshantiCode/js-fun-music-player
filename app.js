@@ -2,34 +2,42 @@ const songs = [
   {
     name: "Acoustic Breeze",
     url: "./music/bensound-acousticbreeze.mp3",
+    image: "./img/acousticbreeze.jpg",
   },
   {
     name: "Dance",
     url: "./music/bensound-dance.mp3",
+    image: "/img/dance.jpg",
   },
   {
     name: "Dreams",
     url: "./music/bensound-dreams.mp3",
+    image: "/img/bluejpg.jpg",
   },
   {
     name: "Erf",
     url: "./music/bensound-erf.mp3",
+    image: "/img/erf.jpg",
   },
   {
     name: "Inspire",
     url: "./music/bensound-inspire.mp3",
+    image: "/img/inspire.jpg",
   },
   {
     name: "Moose",
     url: "./music/bensound-moose.mp3",
+    image: "./img/moose.jpg",
   },
   {
     name: "Summer",
     url: "./music/bensound-summer.mp3",
+    image: "/img/summer.jpg",
   },
   {
     name: "The Lounge",
     url: "./music/bensound-thelounge.mp3",
+    image: "./img/thelounge.jpg",
   },
 ];
 
@@ -46,20 +54,51 @@ const createSongList = () => {
 };
 document.getElementById("songList").appendChild(createSongList());
 
-// Return the Current Song
+// Index of the Current Song in songs Array
 let index = 0;
 
 //Play Current Song
 const playSong = () => {
   const source = document.getElementById("source");
+  // get current song and update src
   let song = songs[index];
-  //add current file to audio source
   source.src = song.url;
 
+  const title = document.getElementById("title");
+  title.innerText = song.name;
+  highlightCurrent();
+  updateImage();
   player.load();
   player.play();
 
   console.log("Source: ", source.src);
+};
+
+// Hightlight the current playing song
+const highlightCurrent = () => {
+  const songList = document.querySelector("ol");
+  const nodeList = document.querySelectorAll("li");
+
+  const currentSong = songs[index].name;
+  console.log("Current Song: ", currentSong);
+
+  for (let i = 0; i < nodeList.length; i++) {
+    // get the text of <li>
+    let listItem = nodeList[i].innerText;
+
+    //compare to current playing song, if match, highlight
+    if (listItem == currentSong) {
+      nodeList[i].classList.add("current");
+    } else {
+      nodeList[i].classList.remove("current");
+    }
+  }
+};
+
+const updateImage = () => {
+  const image = document.querySelector(".card-image");
+
+  image.style.cssText = `background-image: url(${songs[index].image}); background-repeat: no-repeat; background-size: cover`;
 };
 
 const skipForward = () => {
@@ -68,7 +107,6 @@ const skipForward = () => {
     index = -1;
   }
   index++;
-  //   let nextSong = songs[index];
   playSong();
 };
 
@@ -78,7 +116,6 @@ const skipBackwards = () => {
     index = 8;
   }
   index--;
-
   playSong();
 };
 
