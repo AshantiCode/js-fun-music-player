@@ -6,6 +6,7 @@
 
 body {
   background-color: #eee;
+  background: url(./img/background.png);
 }
 
 .card {
@@ -79,21 +80,43 @@ body {
   font-size: 1.3rem;
   text-align: left;
   width: 80%;
-  max-width: 380px;
-  margin: 80px auto 0;
-  background: #ffffff;
-  border-radius: 10px;
-  -webkit-box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
-          box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
+  -webkit-columns: 2;
+          columns: 2;
+  border-radius: 25px;
+  border: 1px solid grey;
+  color: darkblue;
+  margin: 25px auto 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .song-list li {
-  padding: .3rem;
+  padding: 0.3rem;
   list-style-position: inside;
 }
 
 .song-list .current {
   background-color: rgba(12, 84, 151, 0.7);
   color: #fff;
+}
+
+.footer {
+  height: 50px;
+  background-color: rgba(46, 46, 41, 0.952);
+  color: #eee;
+  text-align: center;
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .credits {
+  padding-top: 11px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #db811a;
 }
 /*# sourceMappingURL=style.css.map */
