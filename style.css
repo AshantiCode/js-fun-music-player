@@ -36,11 +36,23 @@ body {
   font-size: 1.8em;
 }
 
+@media (min-width: 580px) {
+  .card-title {
+    font-size: 2rem;
+  }
+}
+
 .card .progress-bar {
   width: 100%;
-  height: 6px;
+  height: 15px;
   -webkit-appearance: none;
   background: #6e0fa5;
+}
+
+.card progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #09c, #f44);
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
 .card .volume-input {
@@ -68,6 +80,7 @@ body {
 
 .card .controls .control {
   cursor: pointer;
+  color: #4e667a;
 }
 
 .card .controls .control:active {
@@ -75,19 +88,35 @@ body {
           transform: scale(0.9);
 }
 
+@media (min-width: 580px) {
+  .card .controls .fa-play,
+  .card .controls .fa-pause {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 580px) {
+  .card .controls .fa-backward,
+  .card .controls .fa-forward {
+    font-size: 2rem;
+  }
+}
+
 .song-list {
   font-size: 1.3rem;
   text-align: left;
   width: 80%;
-  -webkit-columns: 2;
-          columns: 2;
-  border-radius: 25px;
-  border: 1px solid grey;
+  max-width: 480px;
   color: #eee;
   margin: 25px auto 0;
   letter-spacing: 1px;
-  -o-border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
-     border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
+}
+
+@media (min-width: 595px) {
+  .song-list {
+    -webkit-columns: 2;
+            columns: 2;
+  }
 }
 
 .song-list li {
