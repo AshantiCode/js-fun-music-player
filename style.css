@@ -6,7 +6,7 @@
 
 body {
   background-color: #eee;
-  background: url(./img/background.png);
+  background: url(./img/stars-background.png);
 }
 
 .card {
@@ -15,8 +15,8 @@ body {
   width: 80%;
   max-width: 380px;
   border-radius: 25px;
-  -webkit-box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
-          box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 9px 9px 20px rgba(255, 255, 255, 0.4);
+          box-shadow: 9px 9px 20px rgba(255, 255, 255, 0.4);
 }
 
 .card-image {
@@ -76,7 +76,6 @@ body {
 }
 
 .song-list {
-  padding: 1.2rem;
   font-size: 1.3rem;
   text-align: left;
   width: 80%;
@@ -84,10 +83,11 @@ body {
           columns: 2;
   border-radius: 25px;
   border: 1px solid grey;
-  color: darkblue;
+  color: #eee;
   margin: 25px auto 0;
-  font-size: 1.5rem;
   letter-spacing: 1px;
+  -o-border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
+     border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
 }
 
 .song-list li {

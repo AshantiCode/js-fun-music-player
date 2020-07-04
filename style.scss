@@ -6,7 +6,7 @@
 
 body {
   background-color: #eee;
-  background: url(./img/background.png);
+  background: url(./img/stars-background.png);
 }
 
 // .main {
@@ -20,7 +20,7 @@ body {
   width: 80%;
   max-width: 380px;
   border-radius: 25px;
-  box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 9px 9px 20px rgba(255, 255, 255, 0.4);
 
   &-image {
     background: url(./img/acousticbreeze.jpg);
@@ -76,23 +76,17 @@ body {
 }
 
 .song-list {
-  //   display: inline-block;
-  padding: 1.2rem;
   font-size: 1.3rem;
   text-align: left;
   width: 80%;
   columns: 2;
-  //   max-width: 450px;
   border-radius: 25px;
-  //   border: 1px soild;
   border: 1px solid grey;
-  color: darkblue;
+  color: #eee;
   margin: 25px auto 0;
-  //   background: #ffffff;
-  //   border-radius: 10px;
-  font-size: 1.5rem;
   letter-spacing: 1px;
-  //   box-shadow: 3px 20px 16px rgba(0, 0, 0, 0.4);
+  border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
+  //   box-shadow: 13px 9px 19px rgba(255, 255, 255, 0.4);
 
   li {
     padding: 0.3rem;
