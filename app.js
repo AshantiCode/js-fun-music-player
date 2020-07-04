@@ -12,7 +12,7 @@ const songs = [
   {
     name: "Dreams",
     url: "./music/bensound-dreams.mp3",
-    image: "/img/bluejpg.jpg",
+    image: "/img/dreams.jpg",
   },
   {
     name: "Erf",
@@ -22,7 +22,7 @@ const songs = [
   {
     name: "Inspire",
     url: "./music/bensound-inspire.mp3",
-    image: "/img/inspire.jpg",
+    image: "/img/blue.jpg",
   },
   {
     name: "Moose",
